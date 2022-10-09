@@ -1,12 +1,13 @@
 # App FrontEnd
 
 ## Technologies
-* Reactjs
-* Reduxjs
-* Tailwindcss
-* Daisy UI
-* Vite
-* pnpm
+
+- Reactjs
+- Reduxjs
+- Tailwindcss
+- Daisy UI
+- Vite
+- pnpm
 
 ## Installation
 
@@ -24,6 +25,6 @@ $ pnpm run dev
 $ pnpm run build
 ```
 
+## Backend
 
-## Backend 
 [v41-bears-23-be](https://github.com/chingu-voyages/v41-bears-team-23be)

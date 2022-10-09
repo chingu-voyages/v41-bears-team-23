@@ -10,25 +10,25 @@ import Product from './pages/product';
 import Products from './pages/products';
 import SignUp from './pages/SignUp';
 function App() {
-  const location = useLocation();
-  const show =
-    location.pathname === '/signup' || location.pathname === '/login';
+	const location = useLocation();
+	const show =
+		location.pathname === '/signup' || location.pathname === '/login';
 
-  return (
-    <>
-      {!show && <Navbar />}
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/products/:id' element={<Product />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-      {!show && <Footer />}
-    </>
-  );
+	return (
+		<>
+			{!show && <Navbar />}
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/products" element={<Products />} />
+				<Route path="/products/:id" element={<Product />} />
+				<Route path="/cart" element={<Cart />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/signup" element={<SignUp />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+			{!show && <Footer />}
+		</>
+	);
 }
 
 export default App;
