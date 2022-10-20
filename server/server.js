@@ -4,10 +4,11 @@ const path = require("path");
 const { ApolloServer } = require('apollo-server-express');
 //import our typeDefs and resolvers
 
-// const{ typeDefs, resolvers } = require('./schemas');
+const{ typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
 require('dotenv').config();
+const db = require('./config/connection');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
