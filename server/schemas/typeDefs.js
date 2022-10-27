@@ -21,7 +21,9 @@ const typeDefs = gql`
     user: User
   }
   type Query {
-    _dummy: String
+    products: [Product]
+    productByCategory(category: String): [Product]
+    singleProduct(_id : ID!): Product
   }
   type Mutation {
     login(email: String!, password: String!): Auth
