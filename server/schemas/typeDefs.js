@@ -8,7 +8,12 @@ const typeDefs = gql`
   }
   type Product {
     _id: ID!
-    name: String
+    category: String
+    title: String
+    price: Int
+    description: String
+    image: Image
+    rating: Int
     
   }
   type Auth {

@@ -1,8 +1,20 @@
-const { User } = require("../models");
+const { User, Product } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 
 const resolvers= {
+  Query:{
+    products: async(parent, args) =>{
+      return Product.find()
+    },
+    singleProduct: async(parent, {_id}) =>{
+      return Product.findOne({ _id })
+    },
+    productByCategory: async(parent, {category }) =>{
+      const params = category ? { category } : {}
+      return Product.find(params)
+    }
+  },
 Mutation: {
   addUser: async (parent, args) => {
     try {
