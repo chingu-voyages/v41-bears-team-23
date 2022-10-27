@@ -26,3 +26,5 @@ const ProductSchema = new Schema(
           }
     }
 );
+
+module.exports = Product;
