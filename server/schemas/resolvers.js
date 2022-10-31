@@ -4,6 +4,9 @@ const { AuthenticationError } = require("apollo-server-express");
 
 const resolvers= {
   Query:{
+    helloWorld:() =>{
+      return 'Hello world!';
+    },
     products: async(parent, {username }) =>{
       params = username ? { username } : {}
       return Product.find(params);
