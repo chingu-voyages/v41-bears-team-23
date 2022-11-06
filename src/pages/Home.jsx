@@ -17,6 +17,7 @@ margin-top:60px
 display:flex;
 padding:60px;
 height:335px;
+
 `
 const Content= styled.div`
 padding-bottom: 20px;
@@ -142,13 +143,13 @@ const Home = () => {
 		</List>
 	</Wrapper>
   </Brand>
-  <Collection>
+  {/* <Collection>
       <Span ><h3>It started with a small idea</h3>
             <p>A glabal brand with local beginnings, our story began in small studio</p>
             <Button>View Collection</Button>
       </Span>
       <SpanImg></SpanImg>  
-  </Collection>
+  </Collection> */}
   <Club>
     <Title>Join the club and get the benefits</Title>
 	<Content>

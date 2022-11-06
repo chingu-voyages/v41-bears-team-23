@@ -8,7 +8,7 @@ import {faArrowCircleLeft , faArrowCircleRight} from '@fortawesome/free-solid-sv
 
 const Container = styled.div`
   width: 100%;
-  height: 800px;
+  height: 700px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -55,12 +55,13 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 700px;
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  margin-right:80px;
 `;
 
 const Title = styled.h1`
