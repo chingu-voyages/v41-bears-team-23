@@ -26,11 +26,11 @@
 import {FontAwesomeIcon}  from '@fortawesome/react-fontawesome'
 import {faShoppingCart , faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons'
 
-
+ import './Navbar.css';
 // import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile , ipad} from "../responsive";
 
 const Container = styled.div`
   height: 60px;
@@ -106,6 +106,8 @@ justify-content:space-between;
 margin-left:440px;
 margin-right:440px;
 color:#726E8D;
+${ipad({display:flex,
+        margin:"20px"})}
 `
 
 const Navbar = () => {

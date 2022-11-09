@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import {FontAwesomeIcon}  from '@fortawesome/react-fontawesome'
 import {faTwitterSquare,faFacebookSquare,faInstagramSquare,faPinterestSquare,faLinkedin,faSkype} from '@fortawesome/free-brands-svg-icons'
-
+import { mobile } from "../responsive";
 
 const Footer = () => {
 	return <div className='footer'>
@@ -10,7 +10,7 @@ const Footer = () => {
 			<a href="#"><p>Back to top </p></a>
 		</div>
 		<div className='footer__links'>
-			<div className='footer__area'>
+			{/* <div className='footer__area'>
                <h4>Menu</h4>
 			   <ul>
 				<li><a href='#'>New Arrivals</a></li>
@@ -19,8 +19,8 @@ const Footer = () => {
 				<li><a href='#'>Popular This Week</a></li>
 				<li><a href='#'>All Products</a></li>
 			   </ul>
-			</div>
-			<div className='footer__area'>
+			</div> */}
+			{/* <div className='footer__area'>
 			<h4>Categories</h4>
 			   <ul>
 				<li><a href='#'>Crockery</a></li>
@@ -28,9 +28,9 @@ const Footer = () => {
 				<li><a href='#'>Homeware</a></li>
 				<li><a href='#'>Plant Pots</a></li>
 				<li><a href='#'>Chairs</a></li>
-				{/* <li>Crockery</li> */}
+			
 			   </ul>
-			</div>
+			</div> */}
 			<div className='footer__area'>
 			<h4>Our Company</h4>
 			   <ul>
