@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-
-
-mongoose.connect(process.env.MONGODB_URI ||  MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ECommerce', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+mongoose.set('debug', true);
 
 module.exports = mongoose.connection;
