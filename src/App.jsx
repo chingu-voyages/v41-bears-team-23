@@ -15,7 +15,7 @@ function App() {
 		location.pathname === '/signup' || location.pathname === '/login';
 
 	return (
-		<>
+		<div className="w-full h-screen flex justify-center items-center">
 			{!show && <Navbar />}
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -27,7 +27,7 @@ function App() {
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			{!show && <Footer />}
-		</>
+		</div>
 	);
 }
 
