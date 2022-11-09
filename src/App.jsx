@@ -16,7 +16,11 @@ function App() {
 
 	return (
 		<>
-			{!show && <Navbar />}
+		<Navbar />
+		<Home />
+		<Footer />
+			{/* {!show && <Navbar />}
+			<Home />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/products" element={<Products />} />
@@ -26,7 +30,7 @@ function App() {
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
-			{!show && <Footer />}
+			{!show && <Footer />} */}
 		</>
 	);
 }
