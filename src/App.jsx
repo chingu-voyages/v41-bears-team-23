@@ -16,11 +16,9 @@ function App() {
 
 	return (
 		<>
-		<Navbar />
-		<Home />
-		<Footer />
-			{/* {!show && <Navbar />}
-			<Home />
+		
+			{!show && <Navbar />}
+			
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/products" element={<Products />} />
@@ -30,7 +28,7 @@ function App() {
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
-			{!show && <Footer />} */}
+			{!show && <Footer />}
 		</>
 	);
 }

@@ -1,31 +1,8 @@
-// import React from 'react';
-// import {NavLink
-// } from "react-router-dom"
 
-// const Navbar = () => {
-// 	return <div>
-
-
-//     <nav>
-// 	<NavLink to={"/products"}>Products</NavLink>
-//       <NavLink to={"/"}>Avion</NavLink>
-    
-//       <NavLink to={"/cart"}>Cart</NavLink>
-// 	  <NavLink to={"/login"}>Login</NavLink>
-//       <NavLink to={"/signup"}>Signup</NavLink>
-
-//     </nav>
-
-
-
-// 	</div>;
-// };
-
-// export default Navbar;
 
 import {FontAwesomeIcon}  from '@fortawesome/react-fontawesome'
 import {faShoppingCart , faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons'
-
+import { NavLink } from 'react-router-dom';
  import './Navbar.css';
 // import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
@@ -106,13 +83,14 @@ justify-content:space-between;
 margin-left:440px;
 margin-right:440px;
 color:#726E8D;
-${ipad({display:flex,
-        margin:"20px"})}
+${ipad({
+        })}
 `
 
 const Navbar = () => {
   return (
 	<div>
+   <nav>
     <Container>
       <Wrapper>
         <Left>
@@ -122,15 +100,15 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Avion </Logo>
+        <NavLink to="/"> <Logo>Avion </Logo></NavLink> 
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem><FontAwesomeIcon icon={faUser} /></MenuItem>
+        <NavLink to="/signup"><MenuItem>REGISTER</MenuItem></NavLink>
+        <NavLink to="/login"><MenuItem><FontAwesomeIcon icon={faUser} /></MenuItem></NavLink>
           <MenuItem>
             {/* <Badge badgeContent={4} color="primary"> */}
               {/* <ShoppingCartOutlined /> */}
-			  <FontAwesomeIcon icon={faShoppingCart} />
+              <NavLink to="/cart"> <FontAwesomeIcon icon={faShoppingCart} /></NavLink>
             {/* </Badge> */}
           </MenuItem>
         </Right>
@@ -138,12 +116,14 @@ const Navbar = () => {
     </Container>
 	<Line></Line>
 	<Categories>
-	<a href="#">Mens</a>
-	<a href="#">Womens</a>
-	<a href="#">Electronics</a>
-	<a href="#">Jewellery</a>
+  <NavLink to="/products">All Products</NavLink> 
+	<NavLink to="/">Mens</NavLink>
+	<NavLink to="/">Womens</NavLink>
+	<NavLink to="/">Electronics</NavLink>
+	<NavLink to="/">Jewellery</NavLink>
 	
 	</Categories>
+  </nav>
 	</div>
   );
 };
