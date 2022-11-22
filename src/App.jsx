@@ -40,9 +40,10 @@ function App() {
 		location.pathname === '/signup' || location.pathname === '/login';
 
 	return (
+	<>
 		<ApolloProvider client={client}>
 		<StoreProvider>
-		<>
+		
 		  
 			{!show && <Navbar />}
 			
@@ -59,10 +60,10 @@ function App() {
 			{!show && <Footer />}
 			
 
-		</>
+	
 		</StoreProvider>
 			</ApolloProvider>
-		
+			</>
 	);
 }
 
