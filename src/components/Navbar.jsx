@@ -117,10 +117,10 @@ const Navbar = () => {
 	<Line></Line>
 	<Categories>
   <NavLink to="/products">All Products</NavLink> 
-	<NavLink to="/">Mens</NavLink>
-	<NavLink to="/">Womens</NavLink>
-	<NavLink to="/">Electronics</NavLink>
-	<NavLink to="/">Jewellery</NavLink>
+	<NavLink to="/men">Mens</NavLink>
+	<NavLink to="/women">Womens</NavLink>
+	<NavLink to="/electronics">Electronics</NavLink>
+	<NavLink to="/jewelery">Jewellery</NavLink>
 	
 	</Categories>
   </nav>
