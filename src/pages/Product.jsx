@@ -2,10 +2,13 @@ import React from 'react';
 import { AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai';
 import  { useState , useEffect} from 'react';
 import {useParams} from "react-router-dom";
+import {useCart} from "react-use-cart"
 
 import { productItems } from './Api';
 import './product.css';
 const Product = () => {
+    
+      const{addItem} = useCart();
 
 	   const {id} = useParams();
 	   const[singleProduct, setSingleProduct]= useState([]);
@@ -47,7 +50,7 @@ const Product = () => {
                      <h1>{item.title}</h1>
                     <h4>Details: </h4>
                      <p>{item.description}</p>
-                     <p className='price'>Price : {item.price}$</p>
+                     <p className='price'>Price : $ {item.price}</p>
                         {/* <div className='quantity'>               
                                <h3>Quantity:</h3>
                                   <p className='quantity-desc'>
@@ -57,8 +60,8 @@ const Product = () => {
                                   </p>
                         </div> */}
                     <div className="buttons">
-                    <button type="button" className="add-to-cart" >Add to Cart</button>
-                    <button type="button" className="buy-now" >Buy Now</button>
+                    <button type="button" className="add-to-cart" onClick={()=>addItem(item.item)}>Add to Cart</button>
+                    {/* <button type="button" className="buy-now" >Buy Now</button> */}
                     </div>
 
                 </div>
