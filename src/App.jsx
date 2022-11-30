@@ -59,14 +59,35 @@ function App() {
 			{!show && <Navbar />}
 
 			<Routes>
-				<Route path="/" element={user ? <Home /> : <Navigate to="/signup" />} />
-				<Route path="/products" element={<Products />} />
-				<Route path="/products/:id" element={<Product />} />
-				<Route path="/men" element={<Mens />} />
-				<Route path="/women" element={<Women />} />
-				<Route path="/jewelery" element={<Jewelery />} />
-				<Route path="/electronics" element={<Electronics />} />
-				<Route path="/cart" element={<Cart />} />
+				<Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+				<Route
+					path="/products"
+					element={user ? <Products /> : <Navigate to="/login" />}
+				/>
+				<Route
+					path="/products/:id"
+					element={user ? <Product /> : <Navigate to="/login" />}
+				/>
+				<Route
+					path="/men"
+					element={user ? <Mens /> : <Navigate to="/login" />}
+				/>
+				<Route
+					path="/women"
+					element={user ? <Women /> : <Navigate to="/login" />}
+				/>
+				<Route
+					path="/jewelery"
+					element={user ? <Jewelery /> : <Navigate to="/login" />}
+				/>
+				<Route
+					path="/electronics"
+					element={user ? <Electronics /> : <Navigate to="/login" />}
+				/>
+				<Route
+					path="/cart"
+					element={user ? <Cart /> : <Navigate to="/login" />}
+				/>
 				<Route
 					path="/login"
 					element={!user ? <Login /> : <Navigate to="/" />}
