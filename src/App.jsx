@@ -20,53 +20,31 @@ import Women from './pages/Women';
 import Electronics from './pages/Electronics';
 import Jewelery from './pages/Jewelery';
 import { useAuthContext } from './hooks/useAuthContext';
-// import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-// import { setContext } from '@apollo/client/link/context';
-// import { StoreProvider } from '../utils/globalstate';
+import { CartProvider } from 'react-use-cart';
+import {useState, useEffect} from "react"
 
-// const httpLink = createHttpLink({
-// 	uri: "/graphql",
-//   });
-
-// With the configuration of authLink, we use the setContext() function to retrieve the token from localStorage and set the HTTP request headers of every request to include the token, whether the request needs it or not.
-//   const authLink = setContext((_, { headers }) => {
-// 	const token = localStorage.getItem('id_token');
-// 	return {
-// 	  headers: {
-// 		...headers,
-// 		authorization: token ? `Bearer ${token} `: '',
-// 	  },
-// 	};
-//   });
-
-//   const client = new ApolloClient({
-// 	link: authLink.concat(httpLink),
-// 	cache: new InMemoryCache(),
-//   });
 
 function App() {
 	const { user } = useAuthContext();
 	const location = useLocation();
 	const show =
 		location.pathname === '/signup' || location.pathname === '/login';
+		const [cart, setCart] = useState([]);
 
 	return (
+			
 		<div>
-			{/* <ApolloProvider client={client}>
-		<StoreProvider>
-		 */}
-
 			{!show && <Navbar />}
 
 			<Routes>
 				<Route path="/" element={user ? <Home /> : <Navigate to="/signup" />} />
 				<Route path="/products" element={<Products />} />
-				<Route path="/products/:id" element={<Product />} />
+				<Route path="/products/:id" element={<Product setCart={setCart}/>} />
 				<Route path="/men" element={<Mens />} />
 				<Route path="/women" element={<Women />} />
 				<Route path="/jewelery" element={<Jewelery />} />
 				<Route path="/electronics" element={<Electronics />} />
-				<Route path="/cart" element={<Cart />} />
+				<Route path="/cart" element={<Cart  cart={cart}/>} />
 				<Route
 					path="/login"
 					element={!user ? <Login /> : <Navigate to="/" />}
@@ -80,11 +58,9 @@ function App() {
 
 			{!show && <Footer />}
 
-			{/* 
-	
-		</StoreProvider>
-			</ApolloProvider> */}
+			
 		</div>
+		
 	);
 }
 

@@ -35,6 +35,7 @@ height:130px;
 `
 
 const Title = styled.h2`
+  
   font-size: 30px;
   text-align:center;
   padding-bottom:15px;
@@ -46,7 +47,7 @@ text-align:center;
 color:white;
 
 width: 100%;
-height: 300px;
+height: 200px;
   background-image: url("https://www.pixelstalk.net/wp-content/uploads/images1/Free-furniture-wallpapers.jpg")
 `
 const Wrap = styled.div`
@@ -161,9 +162,9 @@ const Home = () => {
       <span> <FontAwesomeIcon icon={faCheckSquare} />Free events   </span> 
 	  <span> <FontAwesomeIcon icon={faCheckSquare} />Large Discounts  </span> 
 	  </Wrap>
-	  <Signup>
+	  {/* <Signup>
       <Input/> <span><Button>Sign Up</Button></span>
-  </Signup>
+  </Signup> */}
   </Club>
 
 	</div>;

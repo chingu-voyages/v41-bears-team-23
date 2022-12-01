@@ -9,7 +9,12 @@ import React from "react";
 import styled from "styled-components";
 import { mobile , ipad} from "../responsive";
 
-const Container = styled.div`
+import {  BiCart} from 'react-icons/bi';
+
+
+import { useCart } from "react-use-cart";
+
+const Container1 = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
 `;
@@ -88,16 +93,22 @@ ${ipad({
 `
 
 const Navbar = () => {
+  
+    const {
+    isEmpty,
+    totalItems,
+    } = useCart();
+
   return (
 	<div>
    <nav>
-    <Container>
+    <Container1>
       <Wrapper>
         <Left>
-          <SearchContainer>
+          {/* <SearchContainer>
             <Input placeholder="Search" />
             <FontAwesomeIcon icon={faMagnifyingGlass}  style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+          </SearchContainer> */}
         </Left>
         <Center>
         <NavLink to="/"> <Logo>Avion </Logo></NavLink> 
@@ -105,15 +116,22 @@ const Navbar = () => {
         <Right>
         <NavLink to="/signup"><MenuItem>REGISTER</MenuItem></NavLink>
         <NavLink to="/login"><MenuItem><FontAwesomeIcon icon={faUser} /></MenuItem></NavLink>
-          <MenuItem>
-            {/* <Badge badgeContent={4} color="primary"> */}
-              {/* <ShoppingCartOutlined /> */}
-              <NavLink to="/cart"> <FontAwesomeIcon icon={faShoppingCart} /></NavLink>
-            {/* </Badge> */}
+          <MenuItem >
+          <NavLink
+                to="/cart"
+             
+              > <sup style={{ position: 'relative', right: '-21px', top: '1px',fontSize:'15px'}}>{totalItems}</sup>
+                <BiCart size="2.5rem" style={{ paddingBottom:'18px'}}/>
+               
+                {/* {!isEmpty && <span style={{ position: 'relative', left: '-21px', top: '-18px'}}>{totalItems}</span>} */}
+                {/* <span style={{ marginLeft: !isEmpty ? '-13px': 0}}>&nbsp;Cart</span> */}
+              </NavLink>
+              {/* <NavLink to="/cart"> <FontAwesomeIcon icon={faShoppingCart} /></NavLink> */}
+           
           </MenuItem>
         </Right>
       </Wrapper>
-    </Container>
+    </Container1>
 	<Line></Line>
 	<Categories>
   <NavLink to="/products">All Products</NavLink> 

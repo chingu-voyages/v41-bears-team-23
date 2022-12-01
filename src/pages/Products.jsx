@@ -24,22 +24,34 @@ const Products = () => {
     let   data1 = response1.data;
     setPopular(data1)   
      console.log("products data", response1.data);
-      console.log("id",data1[1]._id)
+      console.log("id",data1[1]._id);
+
+
   }
+
+  // const [cart, setCart] = useState([]);
+  // const addToCart = (data) =>{
+  //   console.log("cart added item", cart)
+  //   setCart([...cart , data])
+  // }
+
+
 
   return(
     <div className='tvShows'>
+       {/* <Product  addToCart= {addToCart} /> */}
       <h1>data to be displayed on the page</h1>
       <div className='popular'>
               {popular && popular.map((item)=>{
             return <div  className='populartv containerimg' key={item._id} >
-                
+               
                 <img src={item.image} alt="Post banner" onClick={()=> navigate(`/products/${item._id}`)} />
                 <h3>{item.title}</h3>
                 <p>Price : {item.price}$</p>
               </div>
        })}
        </div>
+           
     </div>
   )
 }
