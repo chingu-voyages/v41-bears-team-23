@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import img from '../assets/signup.jpg';
+import img from '../assets/signup1.jpg';
 import { useSignup } from '../hooks/useSignup';
 
 function SignUp() {
@@ -22,8 +22,8 @@ function SignUp() {
 				<div>
 					<h3 className="text-4xl">Join the club and get the benefints</h3>
 					<p className="text-sm mt-8">
-						Sign up for our newsletter and receive exclusive offers on new
-						ranges, sales, pop up stores and more
+						Sign up to purchase and receive a newsletter on exclusive offers and
+						more!
 					</p>
 				</div>
 				<form
