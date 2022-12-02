@@ -37,16 +37,6 @@ function App() {
 			{!show && <Navbar />}
 
 			<Routes>
-<<<<<<< HEAD
-				<Route path="/" element={user ? <Home /> : <Navigate to="/signup" />} />
-				<Route path="/products" element={<Products />} />
-				<Route path="/products/:id" element={<Product setCart={setCart}/>} />
-				<Route path="/men" element={<Mens />} />
-				<Route path="/women" element={<Women />} />
-				<Route path="/jewelery" element={<Jewelery />} />
-				<Route path="/electronics" element={<Electronics />} />
-				<Route path="/cart" element={<Cart  cart={cart}/>} />
-=======
 				<Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
 				<Route
 					path="/products"
@@ -54,7 +44,7 @@ function App() {
 				/>
 				<Route
 					path="/products/:id"
-					element={user ? <Product /> : <Navigate to="/login" />}
+					element={user ? <Product  setCart={setCart} /> : <Navigate to="/login" />}
 				/>
 				<Route
 					path="/men"
@@ -74,9 +64,8 @@ function App() {
 				/>
 				<Route
 					path="/cart"
-					element={user ? <Cart /> : <Navigate to="/login" />}
+					element={user ? <Cart  cart={cart} /> : <Navigate to="/login" />}
 				/>
->>>>>>> acf0063ab8ca5b2080acd4a779580c41331d1709
 				<Route
 					path="/login"
 					element={!user ? <Login /> : <Navigate to="/" />}

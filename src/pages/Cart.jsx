@@ -3,85 +3,30 @@ import { BsCartCheck, BsCartX} from 'react-icons/bs';
 import  { useState , useEffect} from 'react';
 import {useCart} from "react-use-cart"
 const Cart = (props) => {
+
+	const {cart} = props;
+	console.log("added item" , props )
 	  
-  const {
-		isEmpty,
-		
-		items,
-		totalItems,
-		cartTotal,
-		updateItemQuantity,
-		removeItem,
-		emptyCart,
-		} = useCart();
+  return(
+	<div>
+              {  cart.map((item,index)=>{  
 
-		console.log("usecartitem", items )
+return (
+<div  className='image-container' key={item._id} >
+		 
+	<img src={item.image} alt="Post banner" className='product-detail-image'/>
+	<div className='product-detail-desc'>
+		 <h1>{item.title}</h1>
+		 <p className='price'>Price : $ {item.price}</p>
+		</div>
 
-		return(
-
-<Container className="py-4 mt-5">
-		<h1 className={"my-5 text-center"}>
-			{isEmpty? 'Your Cart is Empty' : 'The Cart'}
-		</h1>
-		<Row className="justify-content-center">
-			<Table responsive="sm" striped bordered hover  className="mb-5">
-				<tbody>
-					{items.map((item, index)=>{ 
-						return(
-							<tr key={index}>
-								<td>
-									<div style={{ background: 'white', height: '8rem', overflow: 'hidden', display: 'flex',
-									justifyContent: 'center', alignItems: 'center' }}>
-										<div style={{ padding: '.5rem'}}>
-											<img src={item.image} style={{ width: '4rem'}} alt={item.title} />
-										</div>
-									</div>
-								</td>
-								<td>
-									<h6 style={{ whiteSpace: 'nowrap', width: '14rem', overflow: 'hidden', textOverFlow: 'ellipsis'}}>
-										{item.title}
-									</h6>
-								</td>
-								<td>Rs. {item.price}</td>
-								<td>Quantity ({item.quantity})</td>
-								<td>
-									<Button onClick={()=> updateItemQuantity(item._id, item.quantity - 1)} className="ms-2">-</Button>
-									<Button onClick={()=> updateItemQuantity(item._id, item.quantity + 1)} className="ms-2">+</Button>
-									<Button variant="danger" onClick={()=> removeItem(item._id)} className="ms-2">Remove Item</Button>
-								</td>
-							</tr>
-						)
-})}
-				</tbody>
-			</Table>
-			{!isEmpty &&
-				<Row 
-					style={{ position: 'fixed', bottom: 0}}
-					className={`${theme? 'bg-light-black text-light' : 'bg-light text-balck'} justify-content-center w-100`}
-				>
-					<Col className="py-2">
-						<h4>Total Price: Rs. {cartTotal}</h4>
-					</Col>
-					<Col className="p-0" md={4}>
-						<Button variant="danger"
-							className="m-2"
-							onClick={()=> emptyCart()}
-						>
-							<BsCartX size="1.7rem" />
-							Clear Cart
-						</Button>
-						<Button variant="success"
-							className="m-2"
-						>
-							<BsCartCheck size="1.7rem" />
-							Clear Cart
-						</Button>
-					</Col>
-				</Row>}
-		</Row>
-	</Container>
-	)
-
+	</div>
+)
+	
+}
+)}
+	</div>
+  )
 };
 
 export default Cart;
