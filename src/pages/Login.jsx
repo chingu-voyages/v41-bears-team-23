@@ -51,7 +51,7 @@ function Login() {
 				</form>
 				<button
 					type="submit"
-					className="flex-shrink-0 bg-slate-700 hover:bg-slate-500 border-slate-700 hover:border-slate-500 text-sm border-4 text-white py-1 px-2 rounded"
+					className="flex-shrink-0 bg-slate-700 hover:bg-slate-500 border-slate-700 hover:border-slate-500 text-sm border-4 text-white py-1 px-2 rounded w-64"
 					onClick={() => navigate('/signup')}
 				>
 					CREATE A NEW ACCOUNT
