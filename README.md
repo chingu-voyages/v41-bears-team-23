@@ -1,14 +1,52 @@
-# voyage-tasks
+## Avion
+# Project Description
+Avion is an e-commerce website that sells men's and women's clothing and accessories
+# Product Idea
+With so many people interested in doing online shopping, we wanted to build a e-commerce website. 
+# Product Challenges
+We faced a quite of bit of challenges in terms of resoures, so the MVP of the project changed quite a bit for a much simpler version.
+# Product Features
+The application has  the following pages:
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+    1. The Home page is the main page where users view the products, signup, and login. 
+        ◦ Users can view the product categories and the list of products.          
+        ◦ Users can signup or login through a click of a button
+        
+    2. The Product page
+    • User can view the product image, product description and add 1 quantity of the item to the cart.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+    3. The cart page
+    • All the products added to the cart is displayed in this page, along with the final amount. Users can click on a button to place an order.
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+  
+## Live Sites
+[**App**]()
 
-> Own it & Make it your Own!
+[**API**]()
+
+[**Github**](https://github.com/chingu-voyages/v41-bears-team-23)
+
+[**API Github**](https://github.com/chingu-voyages/v41-bears-team-23be/)
+
+## Development Team
+- [Suba Krishnan](https://github.com/suba-krishnan)
+- Matt Berti https://github.com/mberti13
+- Angela https://github.com/awlFCCamp
+- Kavitha https://github.com/kavithachunduri
+- Medic https://github.com/Medic1111
+
+## Front End Dependencies
+
+- Axios
+- Husky
+- Prettier
+- React
+- React Chart JS 2
+- React Router
+- React Icons
+- Redux
+- Redux toolkit
+- Tailwind CSS
+- Vite
+- Yarn 3.2.2
+
