@@ -12,7 +12,7 @@ export const useSignup = () => {
 		setError(null);
 
 		const response = await fetch(
-			'https://voyage-server.onrender.com/api/v1/register',
+			'https://voyage-server-xk0b.onrender.com/api/v1/register',
 			{
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },

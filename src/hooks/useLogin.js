@@ -12,7 +12,7 @@ export const useLogin = () => {
 		setError(null);
 
 		const response = await fetch(
-			'https://voyage-server.onrender.com/api/v1/login',
+			'https://voyage-server-xk0b.onrender.com/api/v1/login',
 			{
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },

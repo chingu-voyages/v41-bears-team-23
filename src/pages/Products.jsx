@@ -29,17 +29,10 @@ const Products = () => {
 
   }
 
-  // const [cart, setCart] = useState([]);
-  // const addToCart = (data) =>{
-  //   console.log("cart added item", cart)
-  //   setCart([...cart , data])
-  // }
-
-
 
   return(
     <div className='tvShows'>
-       {/* <Product  addToCart= {addToCart} /> */}
+    
       <h1>data to be displayed on the page</h1>
       <div className='popular'>
               {popular && popular.map((item)=>{

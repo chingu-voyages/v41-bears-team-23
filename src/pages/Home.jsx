@@ -94,12 +94,7 @@ const Input = styled.input.attrs({
    height:400px;
    width:630;
   `
-  // const Img2 =styled.div`
-  // backround-image : url("https://www.architectandinteriorsindia.com/public/images/2020/08/05/Fair-Ridge-Accent-Cabinet.jpg")
-  // height:478px;
-  // width:630;
-  
-  // `
+
   const SpanImg =styled.span`
   height:478px;
    width:630;
@@ -144,13 +139,7 @@ const Home = () => {
 		</List>
 	</Wrapper>
   </Brand>
-  {/* <Collection>
-      <Span ><h3>It started with a small idea</h3>
-            <p>A glabal brand with local beginnings, our story began in small studio</p>
-            <Button>View Collection</Button>
-      </Span>
-      <SpanImg></SpanImg>  
-  </Collection> */}
+
   <Club>
     <Title>Join the club and get the benefits</Title>
 	<Content>
@@ -162,9 +151,6 @@ const Home = () => {
       <span> <FontAwesomeIcon icon={faCheckSquare} />Free events   </span> 
 	  <span> <FontAwesomeIcon icon={faCheckSquare} />Large Discounts  </span> 
 	  </Wrap>
-	  {/* <Signup>
-      <Input/> <span><Button>Sign Up</Button></span>
-  </Signup> */}
   </Club>
 
 	</div>;

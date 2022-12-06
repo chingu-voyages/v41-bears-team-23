@@ -1,21 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faShoppingCart,
-	faMagnifyingGlass,
-	faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
-// import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from 'react';
 import styled from 'styled-components';
 import { mobile, ipad } from '../responsive';
 import { useLogout } from '../hooks/useLogout';
+import { useState } from 'react';
 
-import {  BiCart} from 'react-icons/bi';
-
-
-import { useCart } from "react-use-cart";
 
 const Container = styled.div`
 	height: 60px;
@@ -94,10 +86,34 @@ const Categories = styled.div`
 	${ipad({})}
 `;
 
-const Navbar = () => {
+const Sup = styled.sup`
+   
+	color:red;
+	font-weight:500;
+	font-size:18px;
+`
+
+const Navbar = (props) => {
 	const { logout } = useLogout();
 	const handleLogout = () => {
 		logout();
+
+	// 	const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
+    // const [menu_class, setMenuClass] = useState("menu hidden")
+    // const [isMenuClicked, setIsMenuClicked] = useState(false)
+
+    // // toggle burger menu change
+    // const updateMenu = () => {
+    //     if(!isMenuClicked) {
+    //         setBurgerClass("burger-bar clicked")
+    //         setMenuClass("menu visible")
+    //     }
+    //     else {
+    //         setBurgerClass("burger-bar unclicked")
+    //         setMenuClass("menu hidden")
+    //     }
+    //     setIsMenuClicked(!isMenuClicked)
+    // }
 	};
 	return (
 		<div>
@@ -105,13 +121,7 @@ const Navbar = () => {
 				<Container>
 					<Wrapper>
 						<Left>
-							<SearchContainer>
-								<Input placeholder="Search" />
-								<FontAwesomeIcon
-									icon={faMagnifyingGlass}
-									style={{ color: 'gray', fontSize: 16 }}
-								/>
-							</SearchContainer>
+					
 						</Left>
 						<Center>
 							<NavLink to="/">
@@ -120,30 +130,29 @@ const Navbar = () => {
 							</NavLink>
 						</Center>
 						<Right>
-							{/*<NavLink to="/signup"><MenuItem>REGISTER</MenuItem></NavLink>
-        <NavLink to="/login"><MenuItem><FontAwesomeIcon icon={faUser} /></MenuItem></NavLink>*/}
 							<button onClick={handleLogout}>Logout</button>
 							<MenuItem>
-								{/* <Badge badgeContent={4} color="primary"> */}
-								{/* <ShoppingCartOutlined /> */}
 								<NavLink to="/cart">
 									{' '}
+									
 									<FontAwesomeIcon icon={faShoppingCart} />
+									<Sup>{props.count}</Sup>
+									
 								</NavLink>
-								{/* </Badge> */}
 							</MenuItem>
 						</Right>
 					</Wrapper>
 				</Container>
 				<Line></Line>
-				<Categories>
-					<NavLink to="/products">All Products</NavLink>
-					<NavLink to="/men">Mens</NavLink>
-					<NavLink to="/women">Womens</NavLink>
-					<NavLink to="/electronics">Electronics</NavLink>
-					<NavLink to="/jewelery">Jewellery</NavLink>
+				<Categories >
+					<NavLink to="/products" >All Products</NavLink>
+					<NavLink to="/men" >Mens</NavLink>
+					<NavLink to="/women" >Womens</NavLink>
+					<NavLink to="/electronics" >Electronics</NavLink>
+					<NavLink to="/jewelery" >Jewellery</NavLink>
 				</Categories>
 			</nav>
+			{/* <div className={menu_class}></div> */}
 		</div>
 	);
 };
