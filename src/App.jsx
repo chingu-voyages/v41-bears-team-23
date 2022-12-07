@@ -35,12 +35,14 @@ function App() {
 		const [cart, setCart] = useState([]);
 		const [showCart , setShowCart] = useState(false);
 		
+		
 		const addToCart = async(data) => {
 			const idcart = data._id;
 			console.log("addedid",idcart)
           await axios.put(`https://voyage-server-xk0b.onrender.com/api/v1/${user.username}/cart/new/${idcart}`)
           .then((serverresponse)=>{
 			setCart([...cart, { ...data, quantity: 1 }])
+			
 		  })
 		
 		   .catch((error)=>{
@@ -57,6 +59,7 @@ function App() {
 	return (
 			
 		<div>
+			<div className='abcd'>
 			{!show && <Navbar  count={cart.length}  handleShow={handleShow} />}
 
 			<Routes>
@@ -67,7 +70,7 @@ function App() {
 				/>
 				<Route
 					path="/products/:id"
-					element={user ? <Product  addToCart={addToCart} /> : <Navigate to="/login" />}
+					element={user ? <Product cart={cart} addToCart={addToCart}/> : <Navigate to="/login" />}
 				/>
 				<Route
 					path="/cart"
@@ -102,6 +105,7 @@ function App() {
 			
 			<Route path="/stripe" element={<Stripe />} />
 			</Routes>
+			</div>
 			{!show && <Footer />}
 
 			

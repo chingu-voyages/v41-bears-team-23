@@ -20,7 +20,11 @@
  
 }
 
-
+.cart h2{
+  margin:20px;
+  font-weight: 500;
+  font-size:20px;
+}
 .title{
     /* margin-right:50px; */
   float:left;
@@ -66,19 +70,24 @@
 }
 
 .buybtn{
+  
   margin-left: 45%;
-  position: absolute;
-  top: 40%;
+  /* position: absolute; */
+/* 
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
   color:white;
   background-color: rgb(94, 20, 190);
   width:150px;
   height:50px;
 
+
 }
 
-
+.emptymsg{
+  text-align: center;
+  font-weight: 600;
+}
 
 .stripemsg h1{
    text-align: center;
@@ -87,3 +96,15 @@
    margin-bottom: 33%;
 }
 
+.disable-button1{
+  padding: 10px 20px;
+  border: 1px solid #060606 ;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+  width: 200px;
+ 
+}

@@ -7,7 +7,9 @@ import axios from 'axios';
 const Product = (props) => {
     const {addToCart} = props;
     
- 
+    const [disabled, setDisabled] = useState(false);
+    
+    const [style, setStyle] = useState("add-to-cart");
      
 	   const {id} = useParams();
 	   const[singleProduct, setSingleProduct]= useState([]);
@@ -16,19 +18,47 @@ const Product = (props) => {
 
 	   useEffect( ()=>{
         getProduct();
+      
        },[id]);
 
-      
-  const getProduct=async() =>{
     
   
+      
+  const getProduct=async() =>{
     let response1 = await productItems();
    console.log("products response",response1);
    let   data1 = response1.data;
             setSingleProduct(data1)
     }
 
+ 
+    const isItInTheCart = ()=>{
+        let isThere =  props.cart.find((obj)=> {
+        return obj._id === id
+        })
+        if(isThere) {
+        setDisabled(true)
+        setStyle("disable-button")
+        }else{
+        setDisabled(false)
+        setStyle("add-to-cart")
+        }
 
+    }
+    useEffect(()=>{
+        console.log("Effect Running")
+        isItInTheCart();
+       },[])
+      
+
+
+   
+
+     const buttonDisabled = (e)=> {
+        setDisabled(true);
+        setStyle("disable-button");
+     
+     }
    
 	return ( 
 	<div>
@@ -49,7 +79,7 @@ const Product = (props) => {
                      <p>{item.description}</p>
                      <p className='price'>Price : $ {item.price}</p>
                     <div className="buttons">
-                    <button type="button" className="add-to-cart" onClick={()=> addToCart(item)}>Add to Cart</button>
+                    <button type="button" disabled={disabled} className={style} onClick={(e)=> {addToCart(item);buttonDisabled(e) }}>Add to Cart</button>
                     
                     </div>
 
