@@ -47,3 +47,4 @@ The application has  the following pages:
 - Yarn 3.2.2
 - Fontawesome
 - pnpm
+- Mongodb
