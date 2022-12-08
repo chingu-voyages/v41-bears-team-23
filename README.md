@@ -20,9 +20,9 @@ The application has  the following pages:
 
   
 ## Live Sites
-[**App**]()
+[**App**](https://avionstore.netlify.app/)
 
-[**API**]()
+[**API**](https://voyage-server-xk0b.onrender.com/api/v1/products)
 
 [**Github**](https://github.com/chingu-voyages/v41-bears-team-23)
 
