@@ -38,15 +38,12 @@ The application has  the following pages:
 ## Front End Dependencies
 
 - Axios
-- Husky
-- Prettier
 - React
-- React Chart JS 2
 - React Router
 - React Icons
-- Redux
-- Redux toolkit
 - Tailwind CSS
+- Styled Components
 - Vite
 - Yarn 3.2.2
-
+- Fontawesome
+- pnpm
